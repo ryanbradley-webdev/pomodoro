@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import OptionsBar from './components/OptionsBar/OptionsBar'
 import './App.css'
+import Timer from './components/Timer/Timer'
 
 function App() {
   const [option, setOption] = useState('pomodoro')
@@ -23,6 +24,10 @@ function App() {
       <OptionsBar
         selectedOption={option}
         setOption={handleSetOption}
+      />
+
+      <Timer
+        selectedOption={option}
       />
 
     </main>
