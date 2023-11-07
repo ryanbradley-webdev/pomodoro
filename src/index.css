@@ -20,7 +20,7 @@
   --clr-teal: #70F3F8;
   --clr-purple: #D881F8;
   --font-size-h1: 80px;
-  --font-size-h2: 28px;
+  --font-size-h2: 20px;
   --font-size-h3: 14px;
   --font-size-h4: 13px;
   --font-size-body-md: 14px;
@@ -29,7 +29,7 @@
   --space-h3: 13.13px;
   --space-h4: 5px;
   --line-height-h1: 100px;
-  --line-height-h2: 34px;
+  --line-height-h2: 26px;
   --line-height-h3: 16px;
   --line-height-h4: 16px;
   --line-height-body-md: 18px;
@@ -39,10 +39,12 @@
 @media screen and (min-width: 481px) {
   :root {
     --font-size-h1: 100px;
+    --font-size-h2: 28px;
     --font-size-h3: 16px;
     --space-h1: -5px;
     --space-h3: 15px;
     --line-height-h1: 120px;
+    --line-height-h2: 34px;
     --line-height-h3: 19px;
   }
 }

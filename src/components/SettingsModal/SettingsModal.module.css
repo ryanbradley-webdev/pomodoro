@@ -3,9 +3,36 @@
   inset: 0;
   display: grid;
   place-items: center;
+  background-color: #0a0c1c88;
 }
 
 .modal {
+  width: calc(100vw - 48px);
+  height: calc(100vh - 120px);
   background-color: var(--clr-white-900);
   border-radius: 15px;
+}
+
+.modal > div {
+  padding: 24px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading_h2 {
+  color: var(--clr-black-900);
+  font-size: var(--font-size-h2);
+  font-weight: bold;
+  line-height: var(--line-height-h2);
+}
+
+.heading button {
+  height: fit-content;
+  width: fit-content;
+  background-color: transparent;
+  border: none;
 }
