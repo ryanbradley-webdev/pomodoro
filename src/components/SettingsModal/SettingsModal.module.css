@@ -1,0 +1,11 @@
+.modal_container {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  background-color: var(--clr-white-900);
+  border-radius: 15px;
+}

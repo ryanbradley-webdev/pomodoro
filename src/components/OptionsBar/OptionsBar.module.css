@@ -18,7 +18,6 @@
 }
 
 .options_bar button {
-  font-family: inherit;
   font-size: 12px;
   font-weight: bold;
   color: var(--clr-white-700);
