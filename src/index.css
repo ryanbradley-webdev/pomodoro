@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Kumbh+Sans:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:100,200,300,regular,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Space+Mono:regular,italic,700,700italic);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-white-900: #FFF;
+  --clr-white-800: #EFF1FA;
+  --clr-white-700: #D7E0FF;
+  --clr-black-900: #161932;
+  --clr-black-800: #1E213F;
+  --clr-orange: #F87070;
+  --clr-teal: #70F3F8;
+  --clr-purple: #D881F8;
+  --font-size-h1: 100px;
+  --font-size-h2: 28px;
+  --font-size-h3: 16px;
+  --font-size-h4: 13px;
+  --font-size-body-md: 14px;
+  --font-size-body-sm: 12px;
+  --space-h1: -5px;
+  --space-h3: 15px;
+  --space-h4: 5px;
+  --line-height-h1: 120px;
+  --line-height-h2: 34px;
+  --line-height-h3: 19px;
+  --line-height-h4: 16px;
+  --line-height-body-md: 18px;
+  --line-height-body-sm: 14px;
+}
+
+html {
+  font-family: sans-serif;
+  color: var(--clr-white-700);
+  background-color: var(--clr-black-800);
+}

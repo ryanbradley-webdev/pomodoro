@@ -2,10 +2,14 @@ import './App.css'
 
 function App() {
   return (
-    <main>
+    <main
+      style={{
+        fontFamily: 'Kumbh Sans'
+      }}
+    >
 
       <h1>
-        Hello World
+        pomodoro
       </h1>
 
     </main>
