@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
-import styles from './Timer.module.css'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { generateStartTime } from '../../lib/generateStartTime'
 import { parseRemainingTime } from '../../lib/parseRemainingTime'
+import styles from './Timer.module.css'
 
 export default function Timer({
   selectedOption
@@ -9,30 +9,45 @@ export default function Timer({
   selectedOption: string
 }) {
   const [remainingTime, setRemainingTime] = useState(generateStartTime(selectedOption))
+  const [isPaused, setIsPaused] = useState(true)
 
   const timerInterval = useRef<number | undefined>()
 
-  useEffect(() => {
+  const timerFunction = useCallback(() => {
 
-    timerInterval.current = setInterval(() => {
+    setRemainingTime(prev => {
 
-      setRemainingTime(prev => {
+      const newTimeRemaining = prev - 1
 
-        const newTimeRemaining = prev - 1
+      if (newTimeRemaining === 0) {
+        clearInterval(timerInterval.current)
+        timerInterval.current = undefined
+        setIsPaused(true)
+      }
 
-        if (newTimeRemaining === 0) {
-          clearInterval(timerInterval.current)
-        }
+      return newTimeRemaining
 
-        return newTimeRemaining
+    })
 
-      })
-
-    }, 1000)
-
-    return () => clearInterval(timerInterval.current)
-    
   }, [])
+
+  const handleToggleTimer = () => {
+    if (timerInterval.current) {
+      clearInterval(timerInterval.current)
+      timerInterval.current = undefined
+      setIsPaused(true)
+    } else {
+      timerInterval.current = setInterval(timerFunction, 1000)
+      setIsPaused(false)
+    }
+  }
+
+  useEffect(() => {
+    return () => {
+      clearInterval(timerInterval.current)
+      timerInterval.current = undefined
+    }
+  }, [timerFunction])
 
   return (
     <div
@@ -40,6 +55,17 @@ export default function Timer({
     >
 
       {parseRemainingTime(remainingTime)}
+
+      <button
+        onClick={handleToggleTimer}
+      >
+        {remainingTime === 0 ? 
+          'RESTART' :
+          isPaused ?
+            'START' :
+            'PAUSE'
+        }
+      </button>
 
     </div>
   )
