@@ -1,3 +1,5 @@
+import styles from './OptionsBar.module.css'
+
 const OPTIONS = [
   'pomodoro',
   'short break',
@@ -12,7 +14,8 @@ export default function OptionsBar({
   setOption: (newOption: string) => void
 }) {
   return (
-    <nav
+    <ul
+      className={styles.options_bar}
       data-selected-option={OPTIONS.indexOf(selectedOption)}
     >
       
@@ -30,6 +33,6 @@ export default function OptionsBar({
         ))
       }
 
-    </nav>
+    </ul>
   )
 }

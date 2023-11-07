@@ -41,3 +41,7 @@ html {
   color: var(--clr-white-700);
   background-color: var(--clr-black-800);
 }
+
+button {
+  cursor: pointer;
+}
