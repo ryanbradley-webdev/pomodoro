@@ -1,4 +1,4 @@
-import { TimerOption } from '../../lib/types'
+import { AppSettings, TimerOption } from '../../lib/types'
 import { TIMER_OPTIONS } from '../../constants/appOptions'
 import styles from './OptionsBar.module.css'
 
@@ -7,8 +7,16 @@ export default function OptionsBar({
   setOption
 }: {
   selectedOption: string
-  setOption: (newOption: TimerOption) => void
+  setOption: (newTimerOption: Pick<AppSettings, 'timer'>) => void
 }) {
+  const handleClick = (newOption: TimerOption) => {
+    const newTimerSelection = {
+      timer: newOption
+    }
+
+    setOption(newTimerSelection)
+  }
+
   return (
     <ul
       className={styles.options_bar}
@@ -21,7 +29,7 @@ export default function OptionsBar({
             key={idx}
           >
             <button
-              onClick={() => setOption(option)}
+              onClick={() => handleClick(option)}
             >
               {option}
             </button>

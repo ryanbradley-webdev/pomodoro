@@ -3,7 +3,7 @@ import OptionsBar from './components/OptionsBar/OptionsBar'
 import Timer from './components/Timer/Timer'
 import SettingsIcon from './assets/SettingsIcon'
 import SettingsModal from './components/SettingsModal/SettingsModal'
-import { TimerOption, AppSettings } from './lib/types'
+import { AppSettings } from './lib/types'
 import './App.css'
 
 function App() {
@@ -20,13 +20,6 @@ function App() {
 
   const [settingsVisible, setSettingsVisible] = useState(false)
 
-  const handleSetOption = (newOption: TimerOption) => {
-    setAppSettings(prevSettings => ({
-      ...prevSettings,
-      timerOption: newOption
-    }))
-  }
-
   const toggleSettingsModal = () => {
     setSettingsVisible(!settingsVisible)
   }
@@ -34,7 +27,7 @@ function App() {
   const handleUpdateSettings = (newSettings: Partial<AppSettings>) => {
     setAppSettings(prevSettings => ({
       ...prevSettings,
-      newSettings
+      ...newSettings
     }))
   }
 
@@ -52,7 +45,7 @@ function App() {
 
       <OptionsBar
         selectedOption={appSettings.timer}
-        setOption={handleSetOption}
+        setOption={handleUpdateSettings}
       />
 
       <Timer

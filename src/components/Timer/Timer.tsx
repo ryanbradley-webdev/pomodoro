@@ -1,17 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { parseRemainingTime } from '../../lib/parseRemainingTime'
 import styles from './Timer.module.css'
+import { TimerTimes } from '../../lib/types'
 
 export default function Timer({
   selectedOption,
   timerTimes
 }: {
   selectedOption: 'pomodoro' | 'short break' | 'long break'
-  timerTimes: {
-    ['pomodoro']: number,
-    ['short break']: number,
-    ['long break']: number
-  }
+  timerTimes: TimerTimes
 }) {
   const [remainingTime, setRemainingTime] = useState(timerTimes[selectedOption] * 60)
   const [isPaused, setIsPaused] = useState(true)
@@ -49,10 +46,13 @@ export default function Timer({
   }
 
   useEffect(() => {
-    return () => {
-      clearInterval(timerInterval.current)
+    resetTimer()
+    setRemainingTime(timerTimes[selectedOption] * 60)
+  }, [timerTimes, selectedOption])
 
-      timerInterval.current = undefined
+  useEffect(() => {
+    return () => {
+      resetTimer()
     }
   }, [])
 
