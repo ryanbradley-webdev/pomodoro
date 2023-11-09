@@ -1,3 +1,5 @@
+import DownArrowIcon from '../../assets/DownArrowIcon'
+import UpArrowIcon from '../../assets/UpArrowIcon'
 import styles from './NumericInput.module.css'
 
 export default function NumericInput({
@@ -13,6 +15,14 @@ export default function NumericInput({
     const newValue = Number.parseInt(e.target.value)
 
     updateValue(newValue)
+  }
+
+  const incrementValue = () => {
+    updateValue(value + 1)
+  }
+
+  const decrementValue = () => {
+    updateValue(value - 1)
   }
 
   return (
@@ -33,6 +43,19 @@ export default function NumericInput({
         onChange={handleChange}
         min={0}
       />
+
+      <button
+        onClick={incrementValue}
+      >
+        <UpArrowIcon />
+      </button>
+
+      <button
+        onClick={decrementValue}
+        disabled={value <= 0}
+      >
+        <DownArrowIcon />
+      </button>
 
     </label>
   )
