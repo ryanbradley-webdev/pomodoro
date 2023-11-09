@@ -17,6 +17,10 @@
   padding: 24px;
 }
 
+.modal > div:not(:first-of-type) {
+  border-top: 1px solid var(--clr-white-700);
+}
+
 .modal h4 {
   color: var(--clr-black-900);
   font-size: var(--font-size-h4);
@@ -49,4 +53,5 @@
 .time_inputs {
   display: grid;
   row-gap: 8px;
+  margin-top: 18px;
 }

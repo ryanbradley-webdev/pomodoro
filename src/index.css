@@ -13,7 +13,8 @@
 :root {
   --clr-white-900: #FFF;
   --clr-white-800: #EFF1FA;
-  --clr-white-700: #D7E0FF;
+  --clr-white-700: #E3E1E1;
+  --clr-white-600: #D7E0FF;
   --clr-black-900: #161932;
   --clr-black-800: #1E213F;
   --clr-orange: #F87070;
@@ -54,7 +55,7 @@
 
 html {
   font-family: sans-serif;
-  color: var(--clr-white-700);
+  color: var(--clr-white-600);
   background-color: var(--clr-black-800);
 }
 

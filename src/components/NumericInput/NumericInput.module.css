@@ -1,0 +1,24 @@
+.label {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.label input {
+  padding-left: 16px;
+  height: 40px;
+  width: 100%;
+  background-color: var(--clr-white-800);
+  border-radius: 10px;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.label span {
+  color: var(--clr-black-800);
+  opacity: 0.4;
+  font-size: 12px;
+  font-weight: bold;
+}
