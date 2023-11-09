@@ -1,4 +1,5 @@
 import { TimerOption } from '../../App'
+import { TIMER_OPTIONS } from '../../constants/appOptions'
 import styles from './OptionsBar.module.css'
 
 export default function OptionsBar({
@@ -7,7 +8,7 @@ export default function OptionsBar({
   setOption
 }: {
   selectedOption: string
-  timerOptions: TimerOption[]
+  timerOptions: typeof TIMER_OPTIONS
   setOption: (newOption: TimerOption) => void
 }) {
   return (

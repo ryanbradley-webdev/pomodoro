@@ -1,15 +1,23 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
-import styles from './SettingsModal.module.css'
 import CloseIcon from "../../assets/CloseIcon"
 import NumericInput from "../NumericInput/NumericInput"
 import RadioInput from "../RadioInput/RadioInput"
+import { TIMER_OPTIONS } from "../../constants/appOptions"
+import { ColorOption, FontOption, TimerTimes } from "../../App"
+import styles from './SettingsModal.module.css'
 
 export default function SettingsModal({
   visible,
-  setVisible
+  setVisible,
+  font,
+  color,
+  timerTimes
 }: {
   visible: boolean
   setVisible: Dispatch<SetStateAction<boolean>>
+  font: FontOption
+  color: ColorOption
+  timerTimes: TimerTimes
 }) {
   const [display, setDisplay] = useState('none')
 
@@ -67,23 +75,14 @@ export default function SettingsModal({
             className={styles.time_inputs}
           >
 
-            <NumericInput
-              label="pomodoro"
-              value={25}
-              updateValue={newValue => console.log(newValue)}
-            />
-
-            <NumericInput
-              label="short break"
-              value={5}
-              updateValue={newValue => console.log(newValue)}
-            />
-
-            <NumericInput
-              label="long break"
-              value={15}
-              updateValue={newValue => console.log(newValue)}
-            />
+            {TIMER_OPTIONS.map(option => (
+              <NumericInput
+                key={option}
+                label={option}
+                value={timerTimes[option]}
+                updateValue={newValue => console.log(newValue)}
+              />
+            ))}
 
           </div>
 
@@ -96,7 +95,7 @@ export default function SettingsModal({
           </h4>
 
           <RadioInput
-            options={['Kumbh Sans', 'Roboto Slab', 'Space Mono']}
+            selectedFont={font}
             type="font"
           />
 
@@ -109,7 +108,7 @@ export default function SettingsModal({
           </h4>
 
           <RadioInput
-            options={['orange', 'teal', 'purple']}
+            selectedColor={color}
             type="color"
           />
 

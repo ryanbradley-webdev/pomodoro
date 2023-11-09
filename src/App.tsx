@@ -3,58 +3,28 @@ import OptionsBar from './components/OptionsBar/OptionsBar'
 import Timer from './components/Timer/Timer'
 import SettingsIcon from './assets/SettingsIcon'
 import SettingsModal from './components/SettingsModal/SettingsModal'
+import { FONT_OPTIONS, COLOR_OPTIONS, TIMER_OPTIONS } from './constants/appOptions'
 import './App.css'
 
-export type Font = 'Kumbh Sans' | 'Roboto Slab' | 'Space Mono'
-export type Color = 'orange' | 'teal' | 'purple'
-export type TimerOption = 'pomodoro' | 'short break' | 'long break'
+export type FontOption = typeof FONT_OPTIONS[number]
+export type ColorOption = typeof COLOR_OPTIONS[number]
+export type TimerOption = typeof TIMER_OPTIONS[number]
+export type TimerTimes = {
+  [K in typeof TIMER_OPTIONS[number]]: number
+}
 
 type AppSettings = {
-  font: Font
-  fontOptions: [
-    'Kumbh Sans',
-    'Roboto Slab',
-    'Space Mono'
-  ]
-  color: Color
-  colorOptions: [
-    'orange',
-    'teal',
-    'purple'
-  ]
-  timerOption: TimerOption
-  timerOptions: [
-    'pomodoro',
-    'short break',
-    'long break'
-  ]
-  timerTimes: {
-    ['pomodoro']: number,
-    ['short break']: number,
-    ['long break']: number
-  }
+  font: FontOption
+  color: ColorOption
+  timer: TimerOption
+  timerTimes: TimerTimes
 }
 
 function App() {
   const [appSettings, setAppSettings] = useState<AppSettings>({
     font: 'Kumbh Sans',
-    fontOptions: [
-      'Kumbh Sans',
-      'Roboto Slab',
-      'Space Mono'
-    ],
     color: 'orange',
-    colorOptions: [
-      'orange',
-      'teal',
-      'purple'
-    ],
-    timerOption: 'pomodoro',
-    timerOptions: [
-      'pomodoro',
-      'short break',
-      'long break'
-    ],
+    timer: 'pomodoro',
     timerTimes: {
       ['pomodoro']: 25,
       ['short break']: 5,
@@ -88,13 +58,13 @@ function App() {
       </h1>
 
       <OptionsBar
-        selectedOption={appSettings.timerOption}
-        timerOptions={appSettings.timerOptions}
+        selectedOption={appSettings.timer}
+        timerOptions={TIMER_OPTIONS}
         setOption={handleSetOption}
       />
 
       <Timer
-        selectedOption={appSettings.timerOption}
+        selectedOption={appSettings.timer}
         timerTimes={appSettings.timerTimes}
       />
 
@@ -108,6 +78,7 @@ function App() {
       <SettingsModal
         visible={settingsVisible}
         setVisible={setSettingsVisible}
+        {...appSettings}
       />
 
     </main>
