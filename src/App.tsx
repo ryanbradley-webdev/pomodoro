@@ -1,16 +1,74 @@
 import { useState } from 'react'
 import OptionsBar from './components/OptionsBar/OptionsBar'
-import './App.css'
 import Timer from './components/Timer/Timer'
 import SettingsIcon from './assets/SettingsIcon'
 import SettingsModal from './components/SettingsModal/SettingsModal'
+import './App.css'
+
+export type Font = 'Kumbh Sans' | 'Roboto Slab' | 'Space Mono'
+export type Color = 'orange' | 'teal' | 'purple'
+export type TimerOption = 'pomodoro' | 'short break' | 'long break'
+
+type AppSettings = {
+  font: Font
+  fontOptions: [
+    'Kumbh Sans',
+    'Roboto Slab',
+    'Space Mono'
+  ]
+  color: Color
+  colorOptions: [
+    'orange',
+    'teal',
+    'purple'
+  ]
+  timerOption: TimerOption
+  timerOptions: [
+    'pomodoro',
+    'short break',
+    'long break'
+  ]
+  timerTimes: {
+    ['pomodoro']: number,
+    ['short break']: number,
+    ['long break']: number
+  }
+}
 
 function App() {
-  const [option, setOption] = useState('pomodoro')
+  const [appSettings, setAppSettings] = useState<AppSettings>({
+    font: 'Kumbh Sans',
+    fontOptions: [
+      'Kumbh Sans',
+      'Roboto Slab',
+      'Space Mono'
+    ],
+    color: 'orange',
+    colorOptions: [
+      'orange',
+      'teal',
+      'purple'
+    ],
+    timerOption: 'pomodoro',
+    timerOptions: [
+      'pomodoro',
+      'short break',
+      'long break'
+    ],
+    timerTimes: {
+      ['pomodoro']: 25,
+      ['short break']: 5,
+      ['long break']: 15
+    }
+  })
+
   const [settingsVisible, setSettingsVisible] = useState(false)
 
-  const handleSetOption = (newOption: string) => {
-    setOption(newOption)
+  const handleSetOption = (newOption: TimerOption) => {
+    setAppSettings(prevSettings => ({
+      ...prevSettings,
+      timerOption: newOption
+    }))
   }
 
   const toggleSettingsModal = () => {
@@ -20,8 +78,9 @@ function App() {
   return (
     <main
       style={{
-        fontFamily: 'Kumbh Sans'
+        fontFamily: appSettings.font
       }}
+      data-color-option={appSettings.color}
     >
 
       <h1>
@@ -29,12 +88,14 @@ function App() {
       </h1>
 
       <OptionsBar
-        selectedOption={option}
+        selectedOption={appSettings.timerOption}
+        timerOptions={appSettings.timerOptions}
         setOption={handleSetOption}
       />
 
       <Timer
-        selectedOption={option}
+        selectedOption={appSettings.timerOption}
+        timerTimes={appSettings.timerTimes}
       />
 
       <button

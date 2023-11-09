@@ -1,14 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
-import { generateStartTime } from '../../lib/generateStartTime'
 import { parseRemainingTime } from '../../lib/parseRemainingTime'
 import styles from './Timer.module.css'
 
 export default function Timer({
-  selectedOption
+  selectedOption,
+  timerTimes
 }: {
-  selectedOption: string
+  selectedOption: 'pomodoro' | 'short break' | 'long break'
+  timerTimes: {
+    ['pomodoro']: number,
+    ['short break']: number,
+    ['long break']: number
+  }
 }) {
-  const [remainingTime, setRemainingTime] = useState(generateStartTime(selectedOption))
+  const [remainingTime, setRemainingTime] = useState(timerTimes[selectedOption] * 60)
   const [isPaused, setIsPaused] = useState(true)
 
   const timerInterval = useRef<number | undefined>()

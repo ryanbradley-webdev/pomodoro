@@ -33,6 +33,7 @@ export default function RadioInput({
 
       {options.map(option => (
         <Input
+          key={option}
           option={option}
         />
       ))}
