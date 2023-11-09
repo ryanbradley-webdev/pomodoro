@@ -17,6 +17,15 @@
   padding: 24px;
 }
 
+.modal h4 {
+  color: var(--clr-black-900);
+  font-size: var(--font-size-h4);
+  font-weight: bold;
+  line-height: var(--line-height-h4);
+  letter-spacing: var(--space-h4);
+  text-align: center;
+}
+
 .heading {
   display: flex;
   justify-content: space-between;
@@ -35,4 +44,9 @@
   width: fit-content;
   background-color: transparent;
   border: none;
+}
+
+.time_inputs {
+  display: grid;
+  row-gap: 8px;
 }

@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import styles from './SettingsModal.module.css'
 import CloseIcon from "../../assets/CloseIcon"
+import NumericInput from "../NumericInput/NumericInput"
 
 export default function SettingsModal({
   visible,
@@ -50,6 +51,40 @@ export default function SettingsModal({
           >
             <CloseIcon />
           </button>
+
+        </div>
+
+        <div
+          className={styles.time_inputs_container}
+        >
+
+          <h4>
+            TIME (MINUTES)
+          </h4>
+
+          <div
+            className={styles.time_inputs}
+          >
+
+            <NumericInput
+              label="pomodoro"
+              value={25}
+              updateValue={newValue => console.log(newValue)}
+            />
+
+            <NumericInput
+              label="short break"
+              value={5}
+              updateValue={newValue => console.log(newValue)}
+            />
+
+            <NumericInput
+              label="long break"
+              value={15}
+              updateValue={newValue => console.log(newValue)}
+            />
+
+          </div>
 
         </div>
 

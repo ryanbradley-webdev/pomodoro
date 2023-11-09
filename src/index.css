@@ -22,16 +22,16 @@
   --font-size-h1: 80px;
   --font-size-h2: 20px;
   --font-size-h3: 14px;
-  --font-size-h4: 13px;
+  --font-size-h4: 11px;
   --font-size-body-md: 14px;
   --font-size-body-sm: 12px;
   --space-h1: -4px;
   --space-h3: 13.13px;
-  --space-h4: 5px;
+  --space-h4: 4.23px;
   --line-height-h1: 100px;
   --line-height-h2: 26px;
   --line-height-h3: 16px;
-  --line-height-h4: 16px;
+  --line-height-h4: 14px;
   --line-height-body-md: 18px;
   --line-height-body-sm: 14px;
 }
@@ -41,11 +41,14 @@
     --font-size-h1: 100px;
     --font-size-h2: 28px;
     --font-size-h3: 16px;
+    --font-size-h4: 13px;
     --space-h1: -5px;
     --space-h3: 15px;
+    --space-h4: 5px;
     --line-height-h1: 120px;
     --line-height-h2: 34px;
     --line-height-h3: 19px;
+    --line-height-h4: 16px;
   }
 }
 
