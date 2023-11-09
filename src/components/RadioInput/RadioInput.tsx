@@ -1,4 +1,4 @@
-import { ColorOption, FontOption } from "../../App"
+import { ColorOption, FontOption } from "../../lib/types"
 import { COLOR_OPTIONS, FONT_OPTIONS } from "../../constants/appOptions"
 
 type RadioInputProps = 

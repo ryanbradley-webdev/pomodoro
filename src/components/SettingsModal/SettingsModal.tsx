@@ -3,7 +3,7 @@ import CloseIcon from "../../assets/CloseIcon"
 import NumericInput from "../NumericInput/NumericInput"
 import RadioInput from "../RadioInput/RadioInput"
 import { TIMER_OPTIONS } from "../../constants/appOptions"
-import { ColorOption, FontOption, TimerTimes } from "../../App"
+import { ColorOption, FontOption, TimerTimes } from "../../lib/types"
 import styles from './SettingsModal.module.css'
 
 export default function SettingsModal({

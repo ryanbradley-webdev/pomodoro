@@ -1,4 +1,4 @@
-import { TimerOption } from '../../App'
+import { TimerOption } from '../../lib/types'
 import { TIMER_OPTIONS } from '../../constants/appOptions'
 import styles from './OptionsBar.module.css'
 

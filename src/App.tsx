@@ -3,22 +3,9 @@ import OptionsBar from './components/OptionsBar/OptionsBar'
 import Timer from './components/Timer/Timer'
 import SettingsIcon from './assets/SettingsIcon'
 import SettingsModal from './components/SettingsModal/SettingsModal'
-import { FONT_OPTIONS, COLOR_OPTIONS, TIMER_OPTIONS } from './constants/appOptions'
+import { TIMER_OPTIONS } from './constants/appOptions'
+import { TimerOption, AppSettings } from './lib/types'
 import './App.css'
-
-export type FontOption = typeof FONT_OPTIONS[number]
-export type ColorOption = typeof COLOR_OPTIONS[number]
-export type TimerOption = typeof TIMER_OPTIONS[number]
-export type TimerTimes = {
-  [K in typeof TIMER_OPTIONS[number]]: number
-}
-
-type AppSettings = {
-  font: FontOption
-  color: ColorOption
-  timer: TimerOption
-  timerTimes: TimerTimes
-}
 
 function App() {
   const [appSettings, setAppSettings] = useState<AppSettings>({
