@@ -1,5 +1,6 @@
 import DownArrowIcon from '../../assets/DownArrowIcon'
 import UpArrowIcon from '../../assets/UpArrowIcon'
+import { TimerOption, TimerTimes } from '../../lib/types'
 import styles from './NumericInput.module.css'
 
 export default function NumericInput({
@@ -7,22 +8,22 @@ export default function NumericInput({
   value,
   updateValue
 }: {
-  label: string
+  label: TimerOption
   value: number
-  updateValue: (newValue: number) => void
+  updateValue: (newTimeField: Partial<TimerTimes>) => void
 }) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = Number.parseInt(e.target.value)
 
-    updateValue(newValue)
+    updateValue({ [label]: newValue })
   }
 
   const incrementValue = () => {
-    updateValue(value + 1)
+    updateValue({ [label]: value + 1 })
   }
 
   const decrementValue = () => {
-    updateValue(value - 1)
+    updateValue({ [label]: value - 1 })
   }
 
   return (

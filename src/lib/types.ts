@@ -11,3 +11,11 @@ export type AppSettings = {
   timer: TimerOption
   timerTimes: TimerTimes
 }
+
+export const valueIsFont = (value: string): value is FontOption => {
+  return FONT_OPTIONS.includes(value as FontOption)
+}
+
+export const valueIsColor = (value: string): value is ColorOption => {
+  return COLOR_OPTIONS.includes(value as ColorOption)
+}

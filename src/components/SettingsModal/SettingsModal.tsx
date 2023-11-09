@@ -3,30 +3,55 @@ import CloseIcon from "../../assets/CloseIcon"
 import NumericInput from "../NumericInput/NumericInput"
 import RadioInput from "../RadioInput/RadioInput"
 import { TIMER_OPTIONS } from "../../constants/appOptions"
-import { ColorOption, FontOption, TimerTimes } from "../../lib/types"
+import { AppSettings, ColorOption, FontOption, TimerTimes } from "../../lib/types"
 import styles from './SettingsModal.module.css'
 
 export default function SettingsModal({
   visible,
   setVisible,
+  updateSettings,
   font,
   color,
   timerTimes
 }: {
   visible: boolean
   setVisible: Dispatch<SetStateAction<boolean>>
+  updateSettings: (newSettings: Partial<AppSettings>) => void
   font: FontOption
   color: ColorOption
   timerTimes: TimerTimes
 }) {
   const [display, setDisplay] = useState('none')
+  const [tempSettings, setTempSettings] = useState<Omit<AppSettings, 'timer'>>({
+    font,
+    color,
+    timerTimes
+  })
 
   const closeModal = () => {
     setVisible(false)
   }
 
   const applySettings = () => {
+    updateSettings(tempSettings)
     setVisible(false)
+  }
+
+  const handleChangetimerTime = (newTimeField: Partial<TimerTimes>) => {
+    setTempSettings(prevSettings => ({
+      ...prevSettings,
+      timerTimes: {
+        ...prevSettings.timerTimes,
+        ...newTimeField
+      }
+    }))
+  }
+
+  const handleUpdateSelectedValue = (type: 'font' | 'color', newValue: FontOption | ColorOption) => {
+    setTempSettings(prevSettings => ({
+      ...prevSettings,
+      [type]: newValue
+    }))
   }
 
   useEffect(() => {
@@ -79,8 +104,8 @@ export default function SettingsModal({
               <NumericInput
                 key={option}
                 label={option}
-                value={timerTimes[option]}
-                updateValue={newValue => console.log(newValue)}
+                value={tempSettings.timerTimes[option]}
+                updateValue={handleChangetimerTime}
               />
             ))}
 
@@ -95,8 +120,9 @@ export default function SettingsModal({
           </h4>
 
           <RadioInput
-            selectedFont={font}
+            selectedFont={tempSettings.font}
             type="font"
+            updateSelectedValue={handleUpdateSelectedValue}
           />
 
         </div>
@@ -108,8 +134,9 @@ export default function SettingsModal({
           </h4>
 
           <RadioInput
-            selectedColor={color}
+            selectedColor={tempSettings.color}
             type="color"
+            updateSelectedValue={handleUpdateSelectedValue}
           />
 
         </div>

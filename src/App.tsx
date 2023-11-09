@@ -3,7 +3,6 @@ import OptionsBar from './components/OptionsBar/OptionsBar'
 import Timer from './components/Timer/Timer'
 import SettingsIcon from './assets/SettingsIcon'
 import SettingsModal from './components/SettingsModal/SettingsModal'
-import { TIMER_OPTIONS } from './constants/appOptions'
 import { TimerOption, AppSettings } from './lib/types'
 import './App.css'
 
@@ -32,6 +31,13 @@ function App() {
     setSettingsVisible(!settingsVisible)
   }
 
+  const handleUpdateSettings = (newSettings: Partial<AppSettings>) => {
+    setAppSettings(prevSettings => ({
+      ...prevSettings,
+      newSettings
+    }))
+  }
+
   return (
     <main
       style={{
@@ -46,7 +52,6 @@ function App() {
 
       <OptionsBar
         selectedOption={appSettings.timer}
-        timerOptions={TIMER_OPTIONS}
         setOption={handleSetOption}
       />
 
@@ -65,6 +70,7 @@ function App() {
       <SettingsModal
         visible={settingsVisible}
         setVisible={setSettingsVisible}
+        updateSettings={handleUpdateSettings}
         {...appSettings}
       />
 

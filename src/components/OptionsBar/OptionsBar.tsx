@@ -4,11 +4,9 @@ import styles from './OptionsBar.module.css'
 
 export default function OptionsBar({
   selectedOption,
-  timerOptions,
   setOption
 }: {
   selectedOption: string
-  timerOptions: typeof TIMER_OPTIONS
   setOption: (newOption: TimerOption) => void
 }) {
   return (
@@ -18,7 +16,7 @@ export default function OptionsBar({
     >
       
       {
-        timerOptions.map((option, idx) => (
+        TIMER_OPTIONS.map((option, idx) => (
           <li
             key={idx}
           >

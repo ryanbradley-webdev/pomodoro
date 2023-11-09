@@ -6,6 +6,7 @@
 }
 
 .label input {
+  appearance: none;
   padding-left: 16px;
   height: 40px;
   width: 100%;
@@ -15,6 +16,11 @@
   font-family: inherit;
   font-size: 14px;
   font-weight: bold;
+}
+
+.label input::-webkit-outer-spin-button,
+.label input::-webkit-inner-spin-button {
+  appearance: none;
 }
 
 .label span {
