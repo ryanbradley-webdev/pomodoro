@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import styles from './SettingsModal.module.css'
 import CloseIcon from "../../assets/CloseIcon"
 import NumericInput from "../NumericInput/NumericInput"
+import RadioInput from "../RadioInput/RadioInput"
 
 export default function SettingsModal({
   visible,
@@ -85,6 +86,32 @@ export default function SettingsModal({
             />
 
           </div>
+
+        </div>
+
+        <div>
+
+          <h4>
+            FONT
+          </h4>
+
+          <RadioInput
+            options={['Kumbh Sans', 'Roboto Slab', 'Space Mono']}
+            type="font"
+          />
+
+        </div>
+
+        <div>
+
+          <h4>
+            COLOR
+          </h4>
+
+          <RadioInput
+            options={['orange', 'teal', 'purple']}
+            type="color"
+          />
 
         </div>
 
