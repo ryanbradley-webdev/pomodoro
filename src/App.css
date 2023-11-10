@@ -4,9 +4,9 @@
 }
 
 main {
-  height: 100%;
   display: grid;
-  place-items: center;
+  justify-items: center;
+  row-gap: 45px;
 }
 
 main[data-color-option="orange"] {

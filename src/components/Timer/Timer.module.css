@@ -8,6 +8,8 @@
   place-items: center;
   height: 300px;
   width: 300px;
+  margin-top: 3px;
+  margin-bottom: 34px;
   background: linear-gradient(-45deg, #2E325A, #0E112A);
   box-shadow: 
     -50px -50px 100px #272C5A,
