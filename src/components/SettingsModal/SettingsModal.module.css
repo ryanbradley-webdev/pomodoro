@@ -1,14 +1,13 @@
 .modal_container {
   position: fixed;
   inset: 0;
-  display: grid;
-  place-items: center;
   background-color: #0a0c1c88;
 }
 
 .modal {
   width: calc(100vw - 48px);
-  height: calc(100vh - 120px);
+  margin-inline: auto;
+  margin-top: 46px;
   background-color: var(--clr-white-900);
   border-radius: 15px;
 }
@@ -54,4 +53,11 @@
   display: grid;
   row-gap: 8px;
   margin-top: 18px;
+}
+
+.radio_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
 }

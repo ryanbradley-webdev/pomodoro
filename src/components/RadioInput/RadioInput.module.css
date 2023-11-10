@@ -1,0 +1,55 @@
+.input_container {
+  display: flex;
+  gap: 16px;
+  width: fit-content;
+}
+
+.input {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  width: 40px;
+  color: var(--clr-black-800);
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.input span {
+  font-size: 15px;
+  line-height: 40px;
+}
+
+.input:first-child span,
+.input:last-child span {
+  font-weight: bold;
+}
+
+.input input {
+  display: none;
+}
+
+.input:has(input[name="font"]) {
+  background-color: var(--clr-white-800);
+}
+
+.input:has(input[name="font"]:checked) {
+  color: var(--clr-white-900);
+  background-color: var(--clr-black-900);
+}
+
+.input:has(input[name="color"]):first-child {
+  background-color: var(--clr-orange);
+}
+
+.input:has(input[name="color"]):nth-child(2) {
+  background-color: var(--clr-teal);
+}
+
+.input:has(input[name="color"]):last-child {
+  background-color: var(--clr-purple);
+}
+
+.input svg {
+  width: 15px;
+  height: auto;
+}

@@ -115,7 +115,9 @@ export default function SettingsModal({
 
         </div>
 
-        <div>
+        <div
+          className={styles.radio_container}
+        >
 
           <h4>
             FONT
@@ -129,7 +131,9 @@ export default function SettingsModal({
 
         </div>
 
-        <div>
+        <div
+          className={styles.radio_container}
+        >
 
           <h4>
             COLOR
