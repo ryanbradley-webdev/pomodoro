@@ -1,5 +1,6 @@
 import { ColorOption, FontOption, valueIsColor, valueIsFont } from "../../lib/types"
 import { COLOR_OPTIONS, FONT_OPTIONS } from "../../constants/appOptions"
+import styles from './RadioInput.module.css'
 
 type RadioInputProps = {
   updateSelectedValue: (type: 'font' | 'color', newValue: FontOption | ColorOption) => void
@@ -36,6 +37,7 @@ export default function RadioInput(props: RadioInputProps) {
     selected: boolean
   }) => (
     <label
+      className={styles.input}
       htmlFor={option}
     >
 
@@ -60,7 +62,9 @@ export default function RadioInput(props: RadioInputProps) {
   )
 
   return (
-    <div>
+    <div
+      className={styles.input_container}
+    >
 
       {options.map(option => (
         <Input

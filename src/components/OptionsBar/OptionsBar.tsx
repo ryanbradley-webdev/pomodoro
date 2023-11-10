@@ -10,11 +10,7 @@ export default function OptionsBar({
   setOption: (newTimerOption: Pick<AppSettings, 'timer'>) => void
 }) {
   const handleClick = (newOption: TimerOption) => {
-    const newTimerSelection = {
-      timer: newOption
-    }
-
-    setOption(newTimerSelection)
+    setOption({ timer: newOption })
   }
 
   return (
