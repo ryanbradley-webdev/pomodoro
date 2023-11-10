@@ -3,8 +3,10 @@ import CloseIcon from "../../assets/CloseIcon"
 import NumericInput from "../NumericInput/NumericInput"
 import RadioInput from "../RadioInput/RadioInput"
 import { TIMER_OPTIONS } from "../../constants/appOptions"
-import { AppSettings, ColorOption, FontOption, TimerTimes } from "../../lib/types"
+import { AppSettings, ColorOption, FontOption, Prettify, TimerTimes } from "../../lib/types"
 import styles from './SettingsModal.module.css'
+
+type TempSettings = Prettify<Omit<AppSettings, 'timer'>>
 
 export default function SettingsModal({
   visible,
@@ -22,7 +24,7 @@ export default function SettingsModal({
   timerTimes: TimerTimes
 }) {
   const [display, setDisplay] = useState('none')
-  const [tempSettings, setTempSettings] = useState<Omit<AppSettings, 'timer'>>({
+  const [tempSettings, setTempSettings] = useState<TempSettings>({
     font,
     color,
     timerTimes
