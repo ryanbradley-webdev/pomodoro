@@ -1,7 +1,17 @@
-.timer_container {
-  height: 268px;
-  width: 268px;
+.timer_container,
+.timer {
   border-radius: 100%;
+}
+
+.timer_container {
+  display: grid;
+  place-items: center;
+  height: 300px;
+  width: 300px;
+  background: linear-gradient(-45deg, #2E325A, #0E112A);
+  box-shadow: 
+    -50px -50px 100px #272C5A,
+    50px 50px 100px #121530;
 }
 
 .timer {
@@ -9,10 +19,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 12px;
+  height: 268px;
+  width: 268px;
+  background-color: var(--clr-black-900);
 }
 
 .time {
+  position: relative;
   font-size: var(--font-size-h1);
   font-weight: bold;
   line-height: var(--line-height-h1);
@@ -20,6 +35,10 @@
 }
 
 .time_btn {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
   color: var(--clr-white-700);
   font-size: var(--font-size-h3);
   font-weight: bold;

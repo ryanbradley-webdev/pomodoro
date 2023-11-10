@@ -68,20 +68,22 @@ export default function Timer({
         <h2
           className={styles.time}
         >
-          {parseRemainingTime(remainingTime)}
-        </h2>
 
-        <button
-          className={styles.time_btn}
-          onClick={handleToggleTimer}
-        >
-          &nbsp;{remainingTime === 0 ? 
-            'RESTART' :
-            isPaused ?
-              'START' :
-              'PAUSE'
-          }
-        </button>
+          {parseRemainingTime(remainingTime)}
+          
+          <button
+            className={styles.time_btn}
+            onClick={handleToggleTimer}
+          >
+            &nbsp;{remainingTime === 0 ? 
+              'RESTART' :
+              isPaused ?
+                'START' :
+                'PAUSE'
+            }
+          </button>
+
+        </h2>
 
       </div>
 
