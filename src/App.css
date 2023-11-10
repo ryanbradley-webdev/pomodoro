@@ -9,6 +9,18 @@ main {
   place-items: center;
 }
 
+main[data-color-option="orange"] {
+  --selected-color: var(--clr-orange);
+}
+
+main[data-color-option="teal"] {
+  --selected-color: var(--clr-teal);
+}
+
+main[data-color-option="purple"] {
+  --selected-color: var(--clr-purple);
+}
+
 main > h1 {
   font-size: 24px;
   font-weight: bold;

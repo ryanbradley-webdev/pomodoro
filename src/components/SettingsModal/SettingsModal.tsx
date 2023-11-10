@@ -148,6 +148,7 @@ export default function SettingsModal({
         </div>
 
         <button
+          className={styles.apply_btn}
           onClick={applySettings}
         >
           Apply

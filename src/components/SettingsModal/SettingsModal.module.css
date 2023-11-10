@@ -61,3 +61,21 @@
   align-items: center;
   gap: 18px;
 }
+
+.radio_container:last-of-type {
+  padding-bottom: 8px;
+}
+
+.apply_btn {
+  display: block;
+  height: 53px;
+  width: 140px;
+  margin-inline: auto;
+  transform: translateY(26.5px);
+  color: var(--clr-white-900);
+  background-color: var(--selected-color);
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+}
