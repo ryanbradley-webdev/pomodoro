@@ -28,6 +28,7 @@ export default function OptionsBar({
           >
             <button
               onClick={() => handleClick(option)}
+              data-selected={selectedOption === option}
             >
               {option}
             </button>

@@ -1,9 +1,35 @@
 .options_bar {
+  position: relative;
   list-style: none;
   display: flex;
   width: 100%;
   height: 63px;
   background-color: var(--clr-black-900);
+  isolation: isolate;
+}
+
+.options_bar::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  width: calc(33.33% - 14px);
+  background-color: var(--selected-color);
+  border-radius: 50px;
+  z-index: -1;
+  transition: left 0.15s ease-in-out;
+}
+
+.options_bar[data-selected-option="pomodoro"]::before {
+  left: 7px;
+}
+
+.options_bar[data-selected-option="short break"]::before {
+  left: calc(33.33% + 6px);
+}
+
+.options_bar[data-selected-option="long break"]::before {
+  left: calc(66.67% + 6px);
 }
 
 .options_bar li,
@@ -24,4 +50,9 @@
   background-color: transparent;
   border: none;
   opacity: 0.4;
+}
+
+.options_bar button[data-selected="true"] {
+  color: var(--clr-black-800);
+  opacity: 1;
 }
