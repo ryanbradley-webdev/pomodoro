@@ -12,16 +12,19 @@ main {
 main[data-font-option="Kumbh Sans"] {
   font-family: "Kumbh Sans";
   --font-weight: bold;
+  --letter-spacing: -4px;
 }
 
 main[data-font-option="Roboto Slab"] {
   font-family: "Roboto Slab";
-  --font-weight: 400;
+  --font-weight: bold;
+  --letter-spacing: 0;
 }
 
 main[data-font-option="Space Mono"] {
   font-family: "Space Mono";
-  --font-weight: bold;
+  --font-weight: 400;
+  --letter-spacing: -7px;
 }
 
 main[data-color-option="orange"] {
