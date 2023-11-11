@@ -9,6 +9,21 @@ main {
   row-gap: 45px;
 }
 
+main[data-font-option="Kumbh Sans"] {
+  font-family: "Kumbh Sans";
+  --font-weight: bold;
+}
+
+main[data-font-option="Roboto Slab"] {
+  font-family: "Roboto Slab";
+  --font-weight: 400;
+}
+
+main[data-font-option="Space Mono"] {
+  font-family: "Space Mono";
+  --font-weight: bold;
+}
+
 main[data-color-option="orange"] {
   --selected-color: var(--clr-orange);
 }

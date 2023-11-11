@@ -33,9 +33,7 @@ function App() {
 
   return (
     <main
-      style={{
-        fontFamily: appSettings.font
-      }}
+      data-font-option={appSettings.font}
       data-color-option={appSettings.color}
     >
 
