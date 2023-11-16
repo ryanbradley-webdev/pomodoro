@@ -28,8 +28,9 @@ export default function Timer({
     setRemainingTime(prev => {
       const newTimeRemaining = prev - 1
 
-      if (newTimeRemaining === 0) {
+      if (newTimeRemaining < 0) {
         resetTimer()
+        return 0
       }
 
       return newTimeRemaining
@@ -84,7 +85,7 @@ export default function Timer({
             className={styles.time_btn}
             onClick={handleToggleTimer}
           >
-            &nbsp;{remainingTime === 0 ? 
+            &nbsp;{remainingTime === 0 && !timerInterval.current ? 
               'RESTART' :
               isPaused ?
                 'START' :
