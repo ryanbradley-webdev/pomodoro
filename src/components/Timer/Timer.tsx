@@ -40,6 +40,10 @@ export default function Timer({
     if (timerInterval.current) {
       resetTimer()
     } else {
+      if (remainingTime === 0) {
+        setRemainingTime(timerTimes[selectedOption] * 60)
+      }
+
       timerInterval.current = setInterval(timerFunction, 1000)
 
       setIsPaused(false)
