@@ -1,7 +1,12 @@
 import styles from './ProgressBar.module.css'
 
-export default function ProgressBar() {
-
+export default function ProgressBar({
+  percentageLeft
+}: {
+  percentageLeft: number
+}) {
+  const RADIUS = 48
+  const CIRCUMFERENCE = Math.PI * RADIUS * 2
 
   return (
     <svg
@@ -16,6 +21,8 @@ export default function ProgressBar() {
         r={48}
         cx={50}
         cy={50}
+        strokeDasharray={`${CIRCUMFERENCE} ${CIRCUMFERENCE}`}
+        strokeDashoffset={`${CIRCUMFERENCE * percentageLeft}`}
       />
 
     </svg>

@@ -3,4 +3,10 @@
   inset: 8px;
   width: calc(100% - 16px);
   height: calc(100% - 16px);
+  rotate: -90deg;
+}
+
+.container circle {
+  stroke-linecap: round;
+  transition: all 1s linear;
 }

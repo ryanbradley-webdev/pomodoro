@@ -66,6 +66,10 @@ export default function Timer({
         className={styles.timer}
       >
 
+        <ProgressBar
+          percentageLeft={1 - (remainingTime / (timerTimes[selectedOption] * 60))}
+        />
+
         <h2
           className={styles.time}
         >
@@ -85,8 +89,6 @@ export default function Timer({
           </button>
 
         </h2>
-
-        <ProgressBar />
 
       </div>
 
