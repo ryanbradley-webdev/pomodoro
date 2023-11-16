@@ -6,14 +6,40 @@
 
 .modal {
   width: calc(100vw - 48px);
+  max-width: 540px;
   margin-inline: auto;
   margin-top: 46px;
   background-color: var(--clr-white-900);
   border-radius: 15px;
 }
 
+.heading,
+.time_inputs_container {
+  padding-inline: 24px;
+}
+
+@media screen and (min-width: 481px) {
+  .modal_container {
+    display: grid;
+    place-items: center;
+  }
+
+  .modal {
+    margin-top: 0;
+  }
+
+  .heading,
+  .time_inputs_container {
+    padding-inline: 40px;
+  }
+
+  .modal > .heading {
+    padding-block: 34px 31px;
+  }
+}
+
 .modal > div {
-  padding: 24px;
+  padding-block: 24px;
 }
 
 .modal > div:not(:first-of-type) {
@@ -26,7 +52,12 @@
   font-weight: bold;
   line-height: var(--line-height-h4);
   letter-spacing: var(--space-h4);
-  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .modal h4 {
+    text-align: center;
+  }
 }
 
 .heading {
@@ -55,12 +86,26 @@
   margin-top: 18px;
 }
 
+@media screen and (min-width: 481px) {
+  .time_inputs {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+}
+
 .radio_container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 18px;
-  margin-inline: 24px;
+  margin-inline: 40px;
+}
+
+@media screen and (max-width: 480px) {
+  .radio_container {
+    flex-direction: column;
+    margin-inline: 24px;
+  }
 }
 
 .radio_container:last-of-type {

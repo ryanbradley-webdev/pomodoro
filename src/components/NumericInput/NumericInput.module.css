@@ -1,8 +1,14 @@
 .label {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  row-gap: 10px;
   align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .label {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .label input {
@@ -48,7 +54,7 @@
 }
 
 .label button:first-of-type {
-  top: 5px;
+  bottom: 21px;
 }
 
 .label button:last-of-type {
