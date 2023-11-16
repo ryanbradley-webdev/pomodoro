@@ -6,10 +6,10 @@
 .timer_container {
   display: grid;
   place-items: center;
-  height: 300px;
-  width: 300px;
-  margin-top: 3px;
-  margin-bottom: 34px;
+  height: 410px;
+  width: 410px;
+  margin-top: -10px;
+  margin-bottom: 8px;
   background: linear-gradient(-45deg, #2E325A, #0E112A);
   box-shadow: 
     -50px -50px 100px #272C5A,
@@ -23,9 +23,30 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  height: 268px;
-  width: 268px;
+  height: 366px;
+  width: 366px;
   background-color: var(--clr-black-900);
+}
+
+@media screen and (orientation: portrait) {
+  .timer_container {
+    margin-top: 54px;
+    margin-bottom: 89px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timer_container {
+    margin-top: 3px;
+    margin-bottom: 34px;
+    height: 300px;
+    width: 300px;
+  }
+
+  .timer {
+    height: 268px;
+    width: 268px;
+  }
 }
 
 .time {

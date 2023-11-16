@@ -3,6 +3,7 @@
   list-style: none;
   display: flex;
   width: 100%;
+  max-width: 373px;
   height: 63px;
   background-color: var(--clr-black-900);
   isolation: isolate;

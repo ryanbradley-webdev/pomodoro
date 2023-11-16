@@ -1,12 +1,29 @@
 #root {
-  padding: 32px 24px;
+  padding: 48px 24px;
   height: 100vh;
 }
 
 main {
   display: grid;
   justify-items: center;
-  row-gap: 45px;
+  row-gap: 55px;
+}
+
+@media screen and (orientation: portrait) {
+  #root {
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #root {
+    padding: 32px 24px;
+    height: 100vh;
+  }
+
+  main {
+    row-gap: 45px;
+  }  
 }
 
 main[data-font-option="Kumbh Sans"] {
