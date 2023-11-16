@@ -30,13 +30,24 @@ export default function SettingsModal({
     timerTimes
   })
 
-  const closeModal = () => {
+  const resetSettings = () => {
+    setTempSettings({
+      font,
+      color,
+      timerTimes
+    })
+  }
+
+  const closeModal = (reset?: boolean) => {
     setVisible(false)
+    if (reset) {
+      resetSettings()
+    }
   }
 
   const applySettings = () => {
     updateSettings(tempSettings)
-    setVisible(false)
+    closeModal()
   }
 
   const handleChangetimerTime = (newTimeField: Partial<TimerTimes>) => {
@@ -83,7 +94,7 @@ export default function SettingsModal({
           </h2>
 
           <button
-            onClick={closeModal}
+            onClick={() => closeModal(true)}
           >
             <CloseIcon />
           </button>
