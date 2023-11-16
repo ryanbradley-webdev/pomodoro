@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { parseRemainingTime } from '../../lib/parseRemainingTime'
 import styles from './Timer.module.css'
 import { TimerTimes } from '../../lib/types'
+import ProgressBar from '../ProgressBar/ProgressBar'
 
 export default function Timer({
   selectedOption,
@@ -84,6 +85,8 @@ export default function Timer({
           </button>
 
         </h2>
+
+        <ProgressBar />
 
       </div>
 
