@@ -95,6 +95,7 @@ export default function SettingsModal({
 
           <button
             onClick={() => closeModal(true)}
+            className={styles.close_btn}
           >
             <CloseIcon />
           </button>

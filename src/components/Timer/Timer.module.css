@@ -69,4 +69,9 @@
   letter-spacing: var(--space-h3);
   background-color: transparent;
   border: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.time_btn:is(:hover, :focus) {
+  color: var(--selected-color);
 }

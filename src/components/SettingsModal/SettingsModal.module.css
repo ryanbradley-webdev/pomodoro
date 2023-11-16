@@ -67,7 +67,12 @@
   padding-bottom: 8px;
 }
 
+.close_btn:is(:hover, :focus) path {
+  opacity: 1;
+}
+
 .apply_btn {
+  position: relative;
   display: block;
   height: 53px;
   width: 140px;
@@ -79,4 +84,13 @@
   border-radius: 50px;
   font-size: 16px;
   font-weight: bold;
+}
+
+.apply_btn:is(:hover, :focus)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--clr-white-900);
+  border-radius: 50px;
+  opacity: 0.2;
 }

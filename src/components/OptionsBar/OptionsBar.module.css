@@ -51,6 +51,11 @@
   background-color: transparent;
   border: none;
   opacity: 0.4;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.options_bar button:is(:hover, :focus) {
+  opacity: 1;
 }
 
 .options_bar button[data-selected="true"] {

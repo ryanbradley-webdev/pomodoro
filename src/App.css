@@ -57,6 +57,7 @@ main[data-color-option="purple"] {
 }
 
 main > h1 {
+  font-family: "Kumbh Sans";
   font-size: 24px;
   font-weight: bold;
 }
@@ -72,4 +73,10 @@ main > h1 {
   height: fit-content;
   width: fit-content;
   border: none;
+  opacity: 0.5;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.settings_btn:is(:hover, :focus) {
+  opacity: 1;
 }

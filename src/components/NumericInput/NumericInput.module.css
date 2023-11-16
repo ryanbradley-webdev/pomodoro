@@ -18,6 +18,10 @@
   font-weight: bold;
 }
 
+.label input:focus {
+  outline: 1px solid var(--clr-white-600);
+}
+
 .label input::-webkit-outer-spin-button,
 .label input::-webkit-inner-spin-button {
   appearance: none;
@@ -37,6 +41,10 @@
   border: none;
   width: fit-content;
   height: fit-content;
+}
+
+.label button:is(:hover, :focus) path {
+  stroke-opacity: 1;
 }
 
 .label button:first-of-type {
