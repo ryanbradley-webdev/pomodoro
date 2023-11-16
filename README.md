@@ -91,7 +91,7 @@ Using this method I was able to define methods and components which draw from th
 
 ### Continued development
 
-I will be integrating the lessons learned in building this app into other projects across the board, specifically in designing my own Vite/React/TS scaffold for starting projects.
+I will be integrating the lessons learned in building this app into other projects across the board, specifically in designing my own Vite/React/TS scaffold for starting projects. I also intend to further refine the animation in this project, specifically with the settings modal.
 
 ## Author
 
